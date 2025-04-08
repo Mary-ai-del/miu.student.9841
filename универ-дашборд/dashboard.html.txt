@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Welcome, <span id="user-name"></span></h1>
+        <p>Your personal information and dashboard content go here.</p>
+        <a href="index.html" class="logout-btn">Logout</a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

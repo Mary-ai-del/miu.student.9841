@@ -1,0 +1,31 @@
+// Изначальные данные пользователя (для демонстрации)
+const validUsers = {
+    "student1": "password123",
+    "student2": "mypassword"
+};
+
+document.getElementById("login-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const errorMessage = document.getElementById("error-message");
+
+    if (validUsers[username] && validUsers[username] === password) {
+        // Сохраняем имя пользователя в localStorage для персонализации
+        localStorage.setItem("username", username);
+        window.location.href = "dashboard.html";
+    } else {
+        errorMessage.textContent = "Invalid username or password!";
+    }
+});
+
+// Если пользователь уже вошел, показываем его имя на странице dashboard
+if (window.location.pathname === "/dashboard.html") {
+    const username = localStorage.getItem("username");
+    if (username) {
+        document.getElementById("user-name").textContent = username;
+    } else {
+        window.location.href = "login.html";
+    }
+}
